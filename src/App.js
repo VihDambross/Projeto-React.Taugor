@@ -1,20 +1,7 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import login from './pages/login';
-import Tickets from './pages/Tickets';
+import { Routes } from "react-router";
 
-function Login() {
-  return (
-    <Router>
-      <div className='App'>
-        <Link to='/'></Link>
-        <Link to='/Tickets'></Link>
-      </div>
-      <Switch>
-        <Route exact path='/' component={login} />
-        <Route path='/Tickets' component={Tickets} />
-      </Switch>
-    </Router>
-  );
+function App(){
+  return <Routes />;
 }
- 
-export default Login;
+
+export default App;
