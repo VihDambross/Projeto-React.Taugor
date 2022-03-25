@@ -19,3 +19,39 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
+export const firebaseImpl = firebase.initializeApp(firebaseConfig);
+
+export function firebaseCreateUser(name, email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((user) => {
+      firebase.database().ref('/Users').push({
+          name: name,
+          email: email,
+          password: password
+      }).then().catch((error)=>console.log((error.code + error.message)))
+  })
+  .catch((error) => {
+      throw new Error (error.code + error.message)
+  })
+};
+
+export function firebaseSingIn(email, password){
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+      console.log('Usuário logado!')
+  })
+  .catch((error) => {
+      throw new Error (error.code + error.message)
+  
+  });
+}
+
+export function firebaseSingOut(){
+  firebase.auth().signOut().then(() => {
+      
+  }).catch((error) => {
+      console.log(error)
+  });
+}

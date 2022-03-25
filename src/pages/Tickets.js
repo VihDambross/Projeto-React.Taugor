@@ -1,29 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/Tickets.css";
+import Tasks from "../Components/criarTicket.js";
+import AddTickets from "../Components/addTicket";
  
-function Tickets(){
-    return (
-        <div className="pagina-tickets">
-      <header className="header-tickets">
-      <h1 className="titulo-pagina">Biblioteca de Tickets</h1>
-    </header>
-    <form className="form-tickets">
-      <label className="novo-ticket">Criar novo Ticket</label>
-      <label className="titulo-ticket">Título:</label>
-      <input  className="texto-ticket" type="text"></input>
-      <label className="titulo-ticket">Descrição:</label>
-      <input className="texto-ticket" type="text"></input>
-      <label className="titulo-ticket">Prioridade:</label>
-      <select className="texto-ticket" name="select">
+const Tickets = () => {
+  const [tasks, setTasks] = useState([
+    {
+        id:"1",
+       title: "Estudar",
+        completed: false,
+    },
+    {
+        id: "2",
+        title: "Ler livros",
+        completed: true,
+    },
+  ]);
 
-        <option value="valor1">Baixa</option>
-        <option value="valor2" selected>Média</option>
-        <option value="valor3">Alta</option>
-      </select>
-      <button className="botao-tickets" name="button">Salvar</button>
-    </form>
-    </div>
-    )   
-}
- 
+  const handleAddTicket = (taskTitle) => {
+    const newTasks = [
+      ...tasks,
+      {
+        title: taskTitle,
+        id: Math.random(10),
+        completed: false,
+    },
+  ];
+
+    setTasks(newTasks);
+  };
+  return (
+    <>
+          <div className="novo-ticket">
+              <AddTickets handleAddTicket={handleAddTicket}/>
+              <Tasks tasks={tasks}/>
+          </div>
+    </>
+  );
+};
+
 export default Tickets;

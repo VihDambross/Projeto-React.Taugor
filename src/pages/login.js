@@ -3,9 +3,15 @@ import "../CSS/login.css";
 import logo from "../Imagens/logo-header.png";
 import logologin from "../Imagens/logo-login.png";
 
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
  
 function Login(){
+  const history = useHistory();
+  
+  const handleSigIn = () =>{
+
+    history.push("/Tickets");
+  };
     return (
         <div className="App">
         <header className="App-header">
@@ -17,13 +23,13 @@ function Login(){
           <img src={logologin} className="logo-login" alt="logo" />
           <div>
               <form className="form-login">
-              <label className="label-email" for="email">Email</label>
+              <label className="label-email" htmlFor="email">Email</label>
               <input className="email-login" type="text"></input>
 
               <label className="label-senha">Senha</label>
               <input className="senha-login" type="password"></input>
 
-             <Link to="/Tickets" className="botao-login"><buttom value="enviar">Entrar</buttom></Link>
+             <button className="botao-login" value="enviar" onClick={handleSigIn}>Entrar</button>
             </form>
           </div>
         </div>

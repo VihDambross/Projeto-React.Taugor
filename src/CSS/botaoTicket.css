@@ -1,0 +1,10 @@
+.botao-ticket{
+    background: rgb(58, 58, 195);
+    width: 100px;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 4px;
+    margin: 0 0 0 30px;
+    border:none;
+    display: inline-block;
+}

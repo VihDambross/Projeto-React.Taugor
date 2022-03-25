@@ -1,4 +1,4 @@
-import { Routes } from "react-router";
+import Routes from "./routes.js";
 
 function App(){
   return <Routes />;

@@ -1,0 +1,13 @@
+.lista-tickets{
+    background-color: rgb(116, 116, 255);
+    margin: 30px 8px 5px 8px;
+    padding: 10px;
+    border-top-width: 5px;
+    border-color: rgb(255, 255, 255);
+    border-top-style: ridge;
+    border-radius: 0 0 3px 3px;
+    color: white;
+    width: 150px;
+    height: 70px;
+    display:inline-block;
+}
