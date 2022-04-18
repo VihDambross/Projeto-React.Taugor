@@ -23,6 +23,8 @@ const AddTickets = ({handleAddTicket}) =>{
 
     const handleAddTicketClick2 = () => {
         handleAddTicket(inputData + " " + inputData2 + " " + inputData3);
+        setInputData("");
+        setInputData2("");
     };
 
     const handleInputChange3 = (e3) => {

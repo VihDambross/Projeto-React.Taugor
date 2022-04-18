@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import "../CSS/Tickets.css";
 import Tasks from "../Components/criarTicket.js";
 import AddTickets from "../Components/addTicket";
@@ -23,18 +25,29 @@ const Tickets = () => {
       ...tasks,
       {
         title: taskTitle,
-        id: Math.random(10),
+        id: uuidv4(),
         completed: false,
     },
   ];
 
     setTasks(newTasks);
   };
+
+  const handleTaskDeletion = (taskId) => {
+    const newTasks = atsk.filter(task => task.id !=)
+
+    setTasks(newTasks);
+
+  }
+
   return (
     <>
           <div className="novo-ticket">
               <AddTickets handleAddTicket={handleAddTicket}/>
-              <Tasks tasks={tasks}/>
+              <Tasks
+              tasks={tasks}
+              handleTaskDeletion={handleTaskDeletion} 
+              />
           </div>
     </>
   );
