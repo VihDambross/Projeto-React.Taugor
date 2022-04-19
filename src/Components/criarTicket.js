@@ -4,8 +4,8 @@ import Task from "../Components/listaTickets.js";
 const Tasks = ({tasks}) => {
     return (
         <>
-            {tasks.map ((task) => (
-            <Task task = {task} />
+            {tasks.map ((tasks) => (
+            <Task tasks = {tasks} />
             ))}
         </>
     );

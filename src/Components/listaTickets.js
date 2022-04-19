@@ -2,11 +2,11 @@ import React from "react";
 import "../CSS/listaTickets.css";
 import "../CSS/addTicket.css";
 
-const Task = ({task}) => {
+const Task = ({tasks, handleTaskDeletion}) => {
     return <div className="lista-tickets">
-        {task.title}
+        {tasks.title}
         <div className="botao-excluir">
-            <button className="excluir-ticket">Excluir ticket</button>
+            <button className="excluir-ticket" onClick={() => handleTaskDeletion (tasks.id)}>Excluir ticket</button>
         </div>
     </div>
 };

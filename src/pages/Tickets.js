@@ -33,8 +33,8 @@ const Tickets = () => {
     setTasks(newTasks);
   };
 
-  const handleTaskDeletion = (taskId) => {
-    const newTasks = task.filter(task => task.id != taskId)
+  const handleTaskDeletion = (tasksId) => {
+    const newTasks = tasks.filter(tasks => tasks.id !== tasksId)
 
     setTasks(newTasks);
 
