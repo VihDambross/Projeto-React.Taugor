@@ -34,11 +34,11 @@ const Tickets = () => {
   };
 
   const handleTaskDeletion = (tasksId) => {
-    const newTasks = tasks.filter(tasks => tasks.id !== tasksId)
+    const newTasks = tasks.filter(tasks => tasks.id !== tasksId);
 
     setTasks(newTasks);
 
-  }
+  };
 
   return (
     <>
